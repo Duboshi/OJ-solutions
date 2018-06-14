@@ -1,6 +1,6 @@
 /*	NOI 010610 大整数加法 
  *	http://noi.openjudge.cn/ch0106/10/
- *	@author: Dubos
+ *	@author: Dubos（根据《CCF中学生计算机程序设计基础篇》P172例7.1修改）
  */ 
 #include <algorithm>
 #include <iostream>
