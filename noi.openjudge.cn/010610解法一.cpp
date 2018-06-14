@@ -42,9 +42,9 @@ int main ()
 			result1[i] = result1[i]%10;
 		}
 	}
-	while (result1[len_result1-1]==0) //消除前导0 
-		len_result1--; 
-		
+	while (result1[len_result1-1]==0 && len_result1>1) //消除前导0，并至少保留1位 
+		len_result1--;
+	
 	for (i=len_result1-1; i>=0; i--) //输出结果 
 		cout<<result1[i];
 	
