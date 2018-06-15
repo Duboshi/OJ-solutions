@@ -31,7 +31,7 @@ int main ()
 	assign(num1, len_num1);
 	assign(num2, len_num2); //将输入的两个大整数存入数组
 	
-	len_result = max(len_num1, len_num2); //和的位数要足够大 
+	len_result = max(len_num1, len_num2);
 	
 	for (i=0; i<len_result; i++) //计算result数组各个数位的值
 	{
