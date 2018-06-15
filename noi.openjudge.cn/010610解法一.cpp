@@ -8,7 +8,7 @@
 
 using namespace std;
 
-int a1[205], b1[205], c1[205], result1[205], len_a1, len_b1, len_result1;
+int num1[205], num2[205], temp[205], result[205], len_num1, len_num2, len_result;
 
 /*首先，把加数和被加数写入数组，个位在a[0]、b[0]，十位在a[1]、b[1]...
 	
@@ -28,25 +28,25 @@ void assign (int *num, int &len)
 int main ()
 {
 	int i; //数组序号 
-	assign(a1, len_a1);
-	assign(b1, len_b1); //将输入的两个大整数存入数组
+	assign(num1, len_num1);
+	assign(num2, len_num2); //将输入的两个大整数存入数组
 	
-	len_result1 = max(len_a1, len_b1) + 1; //和的位数要足够大 
+	len_result = max(len_num1, len_num2) + 1; //和的位数要足够大 
 	
-	for (i=0; i<len_result1; i++) //把result1数组各个数位的值填对 
+	for (i=0; i<len_result; i++) //把result1数组各个数位的值填对 
 	{
-		result1[i] = a1[i] + b1[i] + c1[i];
-		if (result1[i]>9)
+		result[i] = num1[i] + num2[i] + temp[i];
+		if (result[i]>9)
 		{
-			c1[i+1] = result1[i]/10;
-			result1[i] = result1[i]%10;
+			temp[i+1] = result[i]/10;
+			result[i] = result[i]%10;
 		}
 	}
-	while (result1[len_result1-1]==0 && len_result1>1) //消除前导0，并至少保留1位 
-		len_result1--;
+	while (result[len_result-1]==0 && len_result>1) //消除前导0，并至少保留1位 
+		len_result--;
 	
-	for (i=len_result1-1; i>=0; i--) //输出结果 
-		cout<<result1[i];
+	for (i=len_result-1; i>=0; i--) //输出结果 
+		cout<<result[i];
 	
 	return 0;
 }
