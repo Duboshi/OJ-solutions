@@ -2,7 +2,6 @@
  *	http://noi.openjudge.cn/ch0106/10/
  *	@author: Dubos（根据《程序设计导引及在线实践》P136例7.1修改） 
  */
- 
 #include <cstdio>
 #include <cstring>
 #define MAX_LEN 200
