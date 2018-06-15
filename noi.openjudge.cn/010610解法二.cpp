@@ -2,14 +2,16 @@
  *	http://noi.openjudge.cn/ch0106/10/
  *	@author: Dubos（根据《程序设计导引及在线实践》P136例7.1修改） 
  */
+#include <algorithm>
 #include <cstdio>
 #include <cstring>
-#define MAX_LEN 200
 
-int an1[MAX_LEN+10];
-int an2[MAX_LEN+10];
-char szLine1[MAX_LEN+10];
-char szLine2[MAX_LEN+10];
+using namespace std;
+
+int an1[210];
+int an2[210];
+char szLine1[210];
+char szLine2[210];
 
 int main()
 {
@@ -17,9 +19,6 @@ int main()
 	scanf("%s", szLine2); 
 	
 	int i, j;	//数组序号 
-	
-	memset(an1, 0, 210);
-	memset(an2, 0, 210);
 	
 	//将两个数字逆序储存到数组中，个位储存在序号0位置，十位在序号1位置... 
 	int nLen1 = strlen(szLine1);
@@ -32,8 +31,10 @@ int main()
 	for(i=nLen2-1; i>=0; i--)
 		an2[j++] = szLine2[i] - '0';
 		
+	int len = max(nLen1, nLen2) + 1;
+		
 	//计算和与进位，结果存储在an1中
-	for(i=0; i<MAX_LEN; i++)
+	for(i=0; i<len; i++)
 	{
 		an1[i]+=an2[i];
 		if(an1[i]>=10)
@@ -44,7 +45,7 @@ int main()
 	}
 	
 	bool bStartOutput = false;
-	for(i=MAX_LEN; i>=0; i--) //输出 
+	for(i=len; i>=0; i--) //输出 
 	{
 		if(bStartOutput) //3. 首个非0值输出之后，bStartOutput变为真，正常输出 
 			printf("%d", an1[i]);
