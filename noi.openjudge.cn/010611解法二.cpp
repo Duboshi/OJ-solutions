@@ -31,7 +31,7 @@ int main()
 	for(i=nLen2-1; i>=0; i--)
 		an2[j++] = szLine2[i] - '0';
 		
-	int len = max(nLen1, nLen2);
+	int len = max(nLen1, nLen2);//algorithm库函数
 		
 	//计算差与退位（借位），结果存储在an1中
 	for(i=0; i<len; i++)
