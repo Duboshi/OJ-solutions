@@ -31,7 +31,7 @@ int main ()
 	assign(num1, len_num1);
 	assign(num2, len_num2); //将输入的两个大整数存入数组
 	
-	len_result = len_num1 + len_num2 - 1;
+	len_result = len_num1 + len_num2; //两整数乘积最多的位数是两个整数各自乘积之和
 	
 	for (i=0; i<len_num1; i++) //计算result数组各个数位的值，但不进位 
 		for (j=0; j<len_num2; j++)
@@ -46,9 +46,9 @@ int main ()
 		}
 	}
 	
-	while (result[len_result]) //消除前导0，并至少保留1位 
-		len_result++;
-	
+	while (result[len_result-1]==0 && len_result>1) //消除前导0，并至少保留1位 
+		len_result--;
+			
 	for (i=len_result-1; i>=0; i--) //输出结果 
 		cout<<result[i];
 	
