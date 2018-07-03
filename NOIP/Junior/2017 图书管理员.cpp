@@ -1,0 +1,50 @@
+/* 	
+	@author 杜博识Dubos dubos@foxmail.com
+	luogu P3955 图书管理员（NOIP普及组2017） 
+*/
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main ()
+{
+	int n, q, i, j, ori=10000001;
+	cin>>n>>q;
+	
+	//图书编码数组，需求码数组，需求码位数数组，输出结果数组 
+	int book [n], demand [q], size [q], result [q];
+	
+	for (i=0; i<q; i++) result[i] = ori;
+	
+	
+	//前n行：图书编码赋值 
+	for (i=0; i<n; i++)
+	{
+		cin>>book[i];
+	}
+	
+	//后q行：需求码位数和需求码赋值
+	for (i=0; i<q; i++)
+	{
+		cin>>size[i]>>demand[i];	
+	}
+	
+	for (i=0; i<q; i++)			//逐一搜索q个需求码，需求码序号为i 
+		for (j=0; j<n; j++)		//每个需求码都逐一比对n本书，图书编码序号为j
+			 if (book[j]%(int)pow(10, (double)size[i])==demand[i] 
+			 		&& book[j]<result[i])
+				result[i] = book[j];
+	
+	//输出结果 
+	for (i=0; i<q; i++)
+	{
+		if (result[i]==ori)
+			cout<<-1<<endl;
+		else
+			cout<<result[i]<<endl;
+	}
+
+	return 0;
+}
