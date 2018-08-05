@@ -65,6 +65,7 @@
 	|move a over b|是|否|  
 	|pile a onto b|否|是|  
 	|pile a over b|否|否|  
+	
 	可见包含"move"的指令就要把a之上所有木块归位，而包含"onto"的指令就要把b之上所有木块归位。
 
 #### 答案  
