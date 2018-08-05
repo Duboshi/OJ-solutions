@@ -75,8 +75,8 @@ using namespace std;
 int n, i;
 vector <int> pile [25];
 //0 ~ n-1每个位置都是一个pile [25]，可以放最多 0<n<25 个木块
-//而这样的pile有n个，n值不确定，所以用向量，向量的元素是pile 
-																				//？？？为什么不用二维向量呢
+//而这样的pile有n个，n值不确定，所以用向量，向量的元素是pile
+
 void find_block(int a, int &p, int &h);
 void clear_above(int p, int h);
 void pile_onto(int pa, int h, int pb);
