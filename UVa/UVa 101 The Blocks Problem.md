@@ -14,7 +14,7 @@
 ```cpp
 /* 	
 @author 杜博识Dubos dubos@foxmail.com
-UVa 题号 题目名 
+UVa 101 The Blocks Problem 
 */
 
 #include <iostream>
