@@ -10,5 +10,5 @@
 |NOI难题|十级|  
 
 ###### 相关文件：   
-> [《CCF中学生程序设计等级评价体系》](/CCF中学生程序设计等级评价体系.pdf)
+> [《CCF中学生程序设计等级评价体系》](/CCF中学生程序设计等级评价体系.pdf)  
 > [Online Judge简介](https://github.com/Duboshi/OI/blob/master/NOIP%2000%20OJ%E7%AE%80%E4%BB%8B.md)
