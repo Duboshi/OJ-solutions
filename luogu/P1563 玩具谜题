@@ -1,0 +1,57 @@
+|题目名|《玩具谜题》|  
+|---|---|  
+|**题源**|NOIP提高组2016年|  
+|**OJ**|[luogu P1563](https://www.luogu.org/problemnew/show/P1563)|  
+|**标签**|模拟|  
+|**难度**|普及组简答题|  
+
+#### 题目
+#### 分析 
+* 本题难度较低，无需分析  
+#### 答案
+
+```cpp
+/*
+	@author 杜博识Dubos dubos@foxmail.com
+	luogu P1563 玩具谜题（NOIP提高组2016）
+*/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int pos [100000];
+string occp [100000];
+
+int main()
+{
+	int n, m;
+	cin >>n >>m;
+	
+	//将n个人的朝向输入pos []，职业输入occp []
+	for (int i=0; i<n; ++i)
+		cin >>pos[i] >>occp[i];
+		
+	//输入m行指令
+	int a, s, result=0;
+	for (int i=0; i<m; ++i)
+	{
+		cin >>a >>s;
+		if (a+pos[result]%2 == 1)
+			result += s;
+		else
+			result -= s;
+			
+		if (result<0)
+			result += n;
+		if (result>=n)
+			result -= n;	
+	}
+	
+	//输出
+	cout <<occp[result];
+	
+	return 0;
+}
+```
