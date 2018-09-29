@@ -1,7 +1,7 @@
 |题目名|*A+B Problem*|  
 |---|---|  
 |**题源**||  
-|**OJ**|[bailian 1000](http://bailian.openjudge.cn/practice/1000/)|  
+|**OJ**|[百练 1000](http://bailian.openjudge.cn/practice/1000/)|  
 |**标签**|input and output|  
 |**难度**||  
 
