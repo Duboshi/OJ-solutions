@@ -2,8 +2,8 @@
 |---|---|  
 |**题源**||  
 |**OJ**|[bailian 1000](http://bailian.openjudge.cn/practice/1000/)|  
-|**标签**|输入输出|  
-|**难度**|无|  
+|**标签**|input and output|  
+|**难度**||  
 
 #### 题目
 #### 分析
