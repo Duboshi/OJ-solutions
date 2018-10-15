@@ -9,6 +9,8 @@
 |省选难题/NOI中档题|九级|  
 |NOI难题|十级|  
 
+（文件夹中也有部分题目是AP CS A课程随堂练习，用Java语言写成，并非信息学竞赛训练题目）
+
 ###### 相关文件：   
 > [《CCF中学生程序设计等级评价体系》](/CCF中学生程序设计等级评价体系.pdf)  
 > [《Online Judge简介》](https://github.com/Duboshi/OI/blob/master/NOIP%2000%20OJ%E7%AE%80%E4%BB%8B.md)
