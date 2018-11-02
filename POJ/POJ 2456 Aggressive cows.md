@@ -19,7 +19,7 @@
 using namespace std;
 
 const int MAX_N = 100000;
-int N, C, x[MAX_N]; //N个牛舍，M头牛
+int N, C, x[MAX_N]; //N个牛舍，C头牛
 
 //判断整数d是否符合条件：任意两牛之间的间距都不小于d 
 bool check (int N, int C, int d) {
@@ -27,11 +27,11 @@ bool check (int N, int C, int d) {
 	int pre=0;
 	
 	//之后，如果第i头牛放入了牛舍x[pre]的话, 第i+1头牛就要放入满足x[crt]-x[pre] >= d的最小x[crt]中
-	//对剩余M-1头牛以此进行判断，看能否安置在满足上述条件的牛舍中 
+	//对剩余C-1头牛以此进行判断，看能否安置在满足上述条件的牛舍中 
 	for (int i=1; i<=C-1; ++i) {
 		int crt = pre+1;	//crt用于记录当前这头牛被放置的牛舍序号，至少是pre+1
 		
-		//因为要找满足x[crt]-x[pre] >= d的最小x[crt]，所以只要x[crt]-x[pre] < d就crt++看下一个牛舍 
+		//因为要找满足x[crt]-x[pre] >= d的最小x[crt]，所以只要x[crt]-x[pre] < d就看下一个牛舍(crt++) 
 		while (crt<N && x[crt]-x[pre]<d) {
 			crt++;
 		}
@@ -56,7 +56,7 @@ int main() {
 		scanf("%d\n", &x[i]);
 	sort(x, x+N);
 	
-	//间距下限是0，上限是x[N-1]-x[0]，我们在上下限之间寻找一个合适的答案。
+	//间距下限是0，上限是x[N-1]-x[0]，我们在上下限之间寻找一个合适的答案
 	//为了下面二分查找时条件为upper-lower>1，取upper = x[N-1]-x[0]+1，否则x[N-1]-x[0]有可能为1，无法大于1 
 	int lower = 0, upper = x[N-1]-x[0]+1;
 	
