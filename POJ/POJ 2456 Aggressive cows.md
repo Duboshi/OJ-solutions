@@ -7,6 +7,7 @@
 
 #### 题目
 #### 分析 
+
 #### 答案
 ```cpp
 //POJ 2456 Aggressive cows（最大化最小值）
@@ -65,7 +66,8 @@ int main() {
 		int mid = (upper+lower)/2;
 		
 		//如果中间值mid满足条件，则查找比mid更大的值，lower=mid
-		//如果中间值mid不满足条件，则查找比mid更小的值，upper=mid 
+		//如果中间值mid不满足条件，则查找比mid更小的值，upper=mid
+		//（具体是要满足什么条件，阅读check函数的注释）
 		if (check(N, C, mid))
 			lower=mid;
 		else
