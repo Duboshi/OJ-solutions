@@ -1,7 +1,7 @@
 |题目名|《Aggressive cows 》|  
 |---|---|  
 |**题源**|USACO 2005 February Gold|  
-|**OJ**|[POJ 2456](http://poj.org/problem?id=2456), [白练](http://bailian.openjudge.cn/practice/2456/), [vjudge](https://vjudge.net/problem/POJ-2456)|  
+|**OJ**|[POJ 2456](http://poj.org/problem?id=2456), [百练](http://bailian.openjudge.cn/practice/2456/), [vjudge](https://vjudge.net/problem/POJ-2456)|  
 |**标签**|二分，最大化最小值|  
 |**难度**|普及组中档题/提高组简单题|  
 
