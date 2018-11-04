@@ -1,17 +1,18 @@
-|题目名|POJ 1163 The Triangle|  
+|题目名|*POJ 1163 The Triangle*|  
 |---|---|  
-|**题源**||  
-|**OJ**|[]()|  
-|**标签**||  
-|**难度**||  
+|**题源**|IOI 1994|  
+|**OJ**|[POJ 1163](http://poj.org/problem?id=1163)([vjudge](https://vjudge.net/problem/POJ-1163)), [Luogu P1216](https://www.luogu.org/problem/show?pid=P1216), [百练 1163](http://bailian.openjudge.cn/practice/1163/)|  
+|**标签**|递归，动态规划|  
+|**难度**|普及组简单题|  
 
 #### 题目
 #### 分析 
 #### 答案
+1. 递归解法
 ```cpp
 /* 	
 @author 杜博识Dubos dubos@foxmail.com
-/*	
+
 	POJ 1163 The Triangle数字三角形
 	
 	《算法基础与在线实践》 P134 
