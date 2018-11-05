@@ -8,7 +8,7 @@
 #### 题目
 #### 分析 
 #### 答案
-* 1. 记忆化搜索
+* 记忆化搜索
 ```cpp
 /* 	
 @author 杜博识Dubos dubos@foxmail.com
