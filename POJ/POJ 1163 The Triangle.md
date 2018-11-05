@@ -57,3 +57,46 @@
 	}
 
 	```
+2. **滚动数组**
+	```cpp
+	/*
+	POJ 1163 The Triangle数字三角形
+
+	《算法基础与在线实践》 P139
+
+	解法思路：
+	与记忆化搜索解法一样，只不过我们其实不必须用二维数组sum[][]，因为毕竟每当
+	计算过sum[i][]的各元素值之后，sum[i+1][]的值对于本题便不再有用了，所以可以
+	建立一个一维数组sum[]，记录每行计算的结果。这种方法被称为“滚动数组”。
+	*/
+
+	#include <cstdio>
+	#include <algorithm>
+
+	using namespace std;
+
+	const int MAX_N = 1002;
+	int N, tri[MAX_N][MAX_N], sum[MAX_N];
+
+	int main()
+	{
+		scanf("%d", &N);
+		for (int i=1; i<=N; ++i)
+			for (int j=1; j<=i; ++j)
+				scanf("%d", &tri[i][j]);
+
+		for (int j=1; j<=N; ++j)
+			sum[j] = tri[N][j];
+
+		for (int i=N-1; i>=1; --i)
+			for (int j=1; j<=i; ++j)
+				if (sum[j]<sum[j+1])
+					sum[j] = sum[j+1] + tri[i][j];
+				else
+					sum[j] = sum[j] + tri[i][j];
+
+		printf("%d", sum[1]);
+		return 0;
+	}
+
+	```
