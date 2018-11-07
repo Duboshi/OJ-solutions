@@ -1,7 +1,7 @@
 |题目名|*POJ 2976 Dropping tests*|  
 |---|---|  
 |**题源**|Stanford Local 2005|  
-|**OJ**|[POJ 2976](http://poj.org/problem?id=2976)([vjudge](https://vjudge.net/problem/POJ-2976)), |  
+|**OJ**|[POJ 2976](http://poj.org/problem?id=2976)([vjudge](https://vjudge.net/problem/POJ-2976))|  
 |**标签**|二分，贪心|  
 |**难度**|普及组简单题，或普及组中档题/提高组简单题|  
 
