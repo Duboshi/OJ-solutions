@@ -12,14 +12,14 @@
 1. 左端点排序解法  
 	```cpp
 	/*
-	POJ 1328 Radar Installation
-	UVa 1193 Radar Installation
+		POJ 1328 Radar Installation
+		UVa 1193 Radar Installation
 
-	与下述题目仅有输入输出格式的差别：
-	Luogu P1325 雷达安装 
+		与下述题目仅有输入输出格式的差别：
+		Luogu P1325 雷达安装 
 
-	基于《算法基础与在线实践》P114题解改写（按照线段的左端点排序） 
-	@author Dubos
+		基于《算法基础与在线实践》P114题解改写（按照线段的左端点排序） 
+		@author Dubos
 	*/
 
 	#include <cstdio>
@@ -31,7 +31,7 @@
 	//线段两端
 	struct Node
 	{
-	double left, right;
+		double left, right;
 	};
 
 	int n, d; //n是小岛数量，d是雷达覆盖半径
@@ -44,67 +44,67 @@
 	//比较左侧端点 
 	bool operator < (const Node &a, const Node &b)
 	{
-	return a.left < b.left;
+		return a.left < b.left;
 	}
 
 	int Solve()
 	{	
-	//将所有小岛形成的线段按左端点排序
-	sort(s, s+n);
+		//将所有小岛形成的线段按左端点排序
+		sort(s, s+n);
 
-	int ans = 1;				//ans是Solve的函数结果，即所需雷达数量
-	double now = s[0].right;	//now用于记录排序扫描进行到的位置，最初在s[0]右端点 
+		int ans = 1;				//ans是Solve的函数结果，即所需雷达数量
+		double now = s[0].right;	//now用于记录排序扫描进行到的位置，最初在s[0]右端点 
 
-	//对s[0]后续的(n-1)个小岛遍历，贪心策略如下： 
-	for (int i=1; i<n; ++i)
-	{
-	//若下一个线段与（now所在的）当前线段有交集，则无需加入新雷达
-	//注意：如果下一个线段被当前线段完全包含，则将now的位置移至下一个线段右端点 
-	if(s[i].left <= now) 
-	now = min(now, s[i].right);
+		//对s[0]后续的(n-1)个小岛遍历，贪心策略如下： 
+		for (int i=1; i<n; ++i)
+		{
+			//若下一个线段与（now所在的）当前线段有交集，则无需加入新雷达
+			//注意：如果下一个线段被当前线段完全包含，则将now的位置移至下一个线段右端点 
+			if(s[i].left <= now) 
+				now = min(now, s[i].right);
 
-	//若下一个线段与当前线段没有交集，则需新加入一个雷达，并将now移至下一个线段右端点 
-	else
-	{
-	++ans;
-	now = s[i].right;
-	}
-	}
-	return ans;
+			//若下一个线段与当前线段没有交集，则需新加入一个雷达，并将now移至下一个线段右端点 
+			else
+			{
+				++ans;
+				now = s[i].right;
+			}
+		}
+		return ans;
 	}
 
 	int main()
 	{
-	int x, y;		//坐标 
-	bool solvable;	//题目是否可解（如果有小岛距离海岸线太远，无法覆盖，就不可解） 
-	int cse = 0;	//输入case的数量（case是关键词，不能用作变量名） 
+		int x, y;		//坐标 
+		bool solvable;	//题目是否可解（如果有小岛距离海岸线太远，无法覆盖，就不可解） 
+		int cse = 0;	//输入case的数量（case是关键词，不能用作变量名） 
 
-	scanf("%d%d", &n, &d);
-	while (n!=0 && d!=0)
-	{
-	++cse;
+		scanf("%d%d", &n, &d);
+		while (n!=0 && d!=0)
+		{
+			++cse;
 
-	solvable = true;
-	for (int i=0; i<n; ++i)
-	{
-	scanf("%d%d", &x, &y);
-	if (y>d)
-	  solvable = false;	//有小岛距离海岸线太远，无法被覆盖
-	else
-	{
-	  s[i].left = x - sqrt(d*d - y*y);
-	  s[i].right = x + sqrt(d*d - y*y);
-	}
-	}
+			solvable = true;
+			for (int i=0; i<n; ++i)
+			{
+				scanf("%d%d", &x, &y);
+				if (y>d)
+					solvable = false;	//有小岛距离海岸线太远，无法被覆盖
+				else
+				{
+					s[i].left = x - sqrt(d*d - y*y);
+					s[i].right = x + sqrt(d*d - y*y);
+				}
+			}
 
-	if(solvable)
-	printf("Case %d: %d\n", cse, Solve());
-	else
-	printf("Case %d: -1\n", cse);
+			if(solvable)
+				printf("Case %d: %d\n", cse, Solve());
+			else
+				printf("Case %d: -1\n", cse);
 
-	scanf("%d%d", &n, &d);
-	} 
-	}		
+			scanf("%d%d", &n, &d);
+		} 
+	}				
 	```  
 2. 右端点排序解法  
 	```cpp
