@@ -3,7 +3,7 @@
 |**题源**|Beijing 2002|  
 |**OJ**|[POJ 1328]()([vjudge](https://vjudge.net/problem/POJ-1328)), [UVa 1193](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=3634)([vjudge](https://vjudge.net/problem/UVA-1193))|  
 |**标签**|贪心|  
-|**难度**||  
+|**难度**|普及组中档题/提高组简单题|  
 
 #### 题目
 #### 分析 
