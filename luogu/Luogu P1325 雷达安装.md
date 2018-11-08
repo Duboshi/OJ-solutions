@@ -1,0 +1,89 @@
+跟[POJ 1328 Radar Installation](https://github.com/Duboshi/OJ-solutions/blob/master/POJ/POJ%201328%20Radar%20Installation.md)基本相同，只是输入输出更简单了。
+
+```cpp
+/*
+	Luogu P1325 雷达安装 
+	
+	与下述两题仅有输入输出格式的差别： 
+	POJ 1328 Radar Installation
+	UVa 1193 Radar Installation
+	
+	基于《算法基础与在线实践》P114题解改写（按照线段的右端点排序） 
+	@author Dubos
+*/
+
+#include <cstdio>
+#include <iostream>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+
+//线段两端
+struct Node
+{
+	double left, right;
+};
+
+int n, d; //n是小岛数量，d是雷达覆盖半径
+const int MAX_N = 1010;
+Node s [MAX_N]; //小岛数组，最多1000个小岛
+
+//其实无论是比较左侧还是右侧端点都可以（当然之后的贪心策略有所不同）
+//这里要写一个按照右侧端点排序的版本
+
+//比较右侧端点 
+bool operator < (const Node &a, const Node &b)
+{
+	return a.right < b.right;
+}
+
+int Solve()
+{	
+	//将所有小岛形成的线段按右端点排序
+	sort(s, s+n);
+	
+	int ans = 1;				//ans是Solve的函数结果，即所需雷达数量
+	double now = s[0].right;	//now用于记录排序扫描进行到的位置，最初在s[0]右端点 
+	
+	//对s[0]后续的(n-1)个小岛遍历，贪心策略如下： 
+	for (int i=1; i<n; ++i)
+	{
+		//若下一个线段与（now所在的）当前线段有交集，则无需加入新雷达
+		//注意：如果下一个线段完全包含当前线段，则不改变now的位置，相当于忽略下一个线段 
+		if(s[i].left <= now) 
+			now = min(now, s[i].right);
+			
+		//若下一个线段与当前线段没有交集，则需新加入一个雷达，并将now移至下一个线段右端点 
+		else
+		{
+			++ans;
+			now = s[i].right;
+		}
+	}
+	return ans;
+}
+
+int main()
+{
+	int x, y;		//坐标 
+	bool solvable = true;	//题目是否可解（如果有小岛距离海岸线太远，无法覆盖，就不可解） 
+
+	scanf("%d%d", &n, &d);
+	for (int i=0; i<n; ++i)
+	{
+		scanf("%d%d", &x, &y);
+		if (y>d)
+			solvable = false;	//有小岛距离海岸线太远，无法被覆盖
+		else
+		{
+			s[i].left = x - sqrt(d*d - y*y);
+			s[i].right = x + sqrt(d*d - y*y);
+		}
+	}
+	
+	if(solvable)
+		printf("%d", Solve());
+	else
+		printf("%d", -1);
+}
+```
