@@ -1,7 +1,7 @@
-|题目名|*Common Subsequence*|  
+|题目名|*Longest Common Subsequence*|  
 |---|---|  
 |**题源**||  
-|**OJ**|[UVa 10405]()([vjudge](https://vjudge.net/problem/UVA-10405))|  
+|**OJ**|[UVa 10405](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1346)([vjudge](https://vjudge.net/problem/UVA-10405))|  
 |**标签**|字符串，动态规划，LCS|  
 |**难度**|普及组简单题|  
 
@@ -11,7 +11,7 @@
 ```cpp
 /* 	
 /*
-    UVA 10405 Common Subsequence
+    UVA 10405 Longest Common Subsequence
     Author: Dubos
 
     POJ 1458没说两个字符串的长度；
