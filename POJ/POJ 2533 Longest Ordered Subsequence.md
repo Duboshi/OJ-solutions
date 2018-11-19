@@ -65,13 +65,13 @@
 2. O(nlogn)解法  
 	```cpp
 	/* 
-	POJ 2533 Longest Ordered Subsequence
-	
-	POJ 2533中1 <= N <= 1000；
-	AtCoder 2827中 1<= N <= 100 000;
-	 
-	《挑战程序设计竞赛》P65 
-	本解法为O(nlogn)版本，适用于AtCoder 2827 
+		POJ 2533 Longest Ordered Subsequence
+
+		POJ 2533中1 <= N <= 1000；
+		AtCoder 2827中 1<= N <= 100 000;
+
+		《挑战程序设计竞赛》P65 
+		本解法为O(nlogn)版本，适用于AtCoder 2827 
 	*/
 
 	#include <algorithm> 
